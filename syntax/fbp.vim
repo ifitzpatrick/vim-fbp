@@ -18,16 +18,16 @@ syn match fbpComment /#.*/ contains=fbpTodo
 hi def link fbpComment Comment
 
 " edges
-syn match fbpEdge /\<\u\+\s*->\s*\u\+\>/ contains=fbpOUT,fbpIN
+syn match fbpEdge /\<[a-zA-Z_][a-zA-Z0-9_\-]\+\s*->\s*[a-zA-Z_][a-zA-Z0-9_\-]\+\>/ contains=fbpOUT,fbpIN
 hi fbpEdge ctermfg=green cterm=bold guifg=#859900 gui=bold
 
 syn match fbpArrow /->/ contained
 hi def link fbpArrow Operator
 
-syn match fbpOUT /\<\u\+\s*->/ contained contains=fbpArrow
+syn match fbpOUT /\<[a-zA-Z_][a-zA-Z0-9_\-]\+\s*->/ contained contains=fbpArrow
 hi def link fbpOUT Type
 
-syn match fbpIN  /->\s*\u\+\>/ contains=fbpArrow
+syn match fbpIN  /->\s*[a-zA-Z_][a-zA-Z0-9_\-]\+\>/ contains=fbpArrow
 hi fbpIN ctermfg=green cterm=bold guifg=#859900 gui=bold
 
 " components
